@@ -1,17 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">    
+    <Person
+      v-if="people.length > 0"
+      gender="Male"
+      :people="people"
+    />
+    <Person
+      v-if="people.length > 0"
+      gender="Female"
+      :people="people"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
+
+import Person from './components/Person.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      people: []      
+    }
+  },
   components: {
-    HelloWorld
+    Person
+  },
+  mounted() {
+    let url = 'https://agltestfunction.azurewebsites.net/api/getPeople'
+
+    axios.get(url).then(response => {        
+      this.people = response.data                 
+      this.displayLoading = false;
+    }).catch(e => {
+      console.log(e)
+    })
   }
 }
 </script>
