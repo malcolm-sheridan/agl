@@ -8,7 +8,7 @@ The briefing was this...
 
 *You need to write some code to consume the json and output a list of all the cats in alphabetical order under a heading of the gender of their owner*
 
-Navigate [here](https://aglteststorage.z26.web.core.windows.net) to see a working version.
+Navigate <a href="https://aglteststorage.z26.web.core.windows.net" target="_blank">here</a> to see a working version.
 
 ## Installation
 
