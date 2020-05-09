@@ -1,5 +1,8 @@
 <template>
-  <div id="app">    
+  <div id="app">  
+    <Loading 
+      :displayLoadingMessage="displayLoadingMessage"
+    />  
     <Person
       v-if="people.length > 0"
       gender="Male"
@@ -16,24 +19,27 @@
 <script>
 import axios from 'axios'
 
+import Loading from './components/Loading.vue'
 import Person from './components/Person.vue'
 
 export default {
   name: 'App',
   data () {
     return {
-      people: []      
+      people: [],
+      displayLoadingMessage: true      
     }
   },
   components: {
-    Person
+    Person,
+    Loading
   },
   mounted() {
     let url = 'https://agltestfunction.azurewebsites.net/api/getPeople'
 
     axios.get(url).then(response => {        
       this.people = response.data                 
-      this.displayLoading = false;
+      this.displayLoadingMessage = false;
     }).catch(e => {
       console.log(e)
     })
