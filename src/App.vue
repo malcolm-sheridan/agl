@@ -39,7 +39,7 @@ export default {
 
     axios.get(url).then(response => {        
       this.people = response.data                 
-      this.displayLoadingMessage = false;
+      this.displayLoadingMessage = false
     }).catch(e => {
       console.log(e)
     })
