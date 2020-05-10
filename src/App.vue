@@ -34,6 +34,9 @@ export default {
     Person,
     Loading
   },
+  created() {
+    this.displayLoadingMessage = true
+  },
   mounted() {
     let url = 'https://agltestfunction.azurewebsites.net/api/getPeople'
 
