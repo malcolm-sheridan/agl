@@ -58,3 +58,32 @@ describe('Person Component', () => {
     expect(wrapper.contains(".blue")).toBe(false)    
   })
 })
+
+describe('Person Component', () => {
+  it('does display one pet for a female', () => {
+
+    let wrapper = shallowMount(Person, {
+      propsData: {
+        gender: 'Male',
+        people: [
+        {
+          gender: 'Male',
+          pets: [
+            {
+              name: 'Test',
+              type: 'Cat'
+            },
+            {
+              name: 'Test',
+              type: 'Cat'
+            }           
+          ]
+        }
+        ]
+      }
+    })    
+    //expect(wrapper.contains(".blue")).toBe(false) 
+    expect(wrapper.findAll(Person).length).toBe(2)
+    //expect(wrapper.findAll(".b-avatar-custom").length).toBe(2)
+  })
+})

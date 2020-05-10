@@ -1,6 +1,6 @@
 <template>
   <div id="app">  
-    <Loading 
+    <Loading       
       :displayLoadingMessage="displayLoadingMessage"
     />  
     <Person

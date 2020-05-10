@@ -4,10 +4,10 @@
             {{ gender }}
         </h2>
         <div class="mb-2">
-            <b-avatar size="4em"
+            <b-avatar size="4em" 
                 v-for="(pet, index) in reduce" :key="index">
                 {{ pet.name }}
-            </b-avatar>
+            </b-avatar>            
         </div>
     </div>
 </template>
