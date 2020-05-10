@@ -60,7 +60,7 @@ describe('Person Component', () => {
 })
 
 describe('Person Component', () => {
-  it('does display one pet for a female', () => {
+  it('pass in 3 pets but only 2 cats should be rendered', () => {
 
     let wrapper = shallowMount(Person, {
       propsData: {
@@ -76,14 +76,17 @@ describe('Person Component', () => {
             {
               name: 'Test',
               type: 'Cat'
-            }           
+            },
+            {
+              name: 'Test',
+              type: 'Dog'
+            }          
           ]
         }
         ]
       }
-    })    
-    //expect(wrapper.contains(".blue")).toBe(false) 
-    expect(wrapper.findAll(Person).length).toBe(2)
-    //expect(wrapper.findAll(".b-avatar-custom").length).toBe(2)
+    })        
+      
+    expect(wrapper.findAll("b-avatar").length).toBe(2)
   })
 })
