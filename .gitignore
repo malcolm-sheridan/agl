@@ -19,3 +19,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Azure Functions artifacts
+bin
+obj
+appsettings.json
+local.settings.json
