@@ -33,10 +33,7 @@ export default {
   components: {
     Person,
     Loading
-  },
-  created() {
-    this.displayLoadingMessage = true
-  },
+  },  
   mounted() {
     let url = 'https://agltestfunction.azurewebsites.net/api/getPeople'
 
